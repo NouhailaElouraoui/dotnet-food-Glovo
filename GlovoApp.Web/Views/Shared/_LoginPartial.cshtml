@@ -1,0 +1,73 @@
+@using Microsoft.AspNetCore.Identity
+@using Nouhaila.netProjet.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav ms-auto gap-3">
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+    </li>
+    
+    <!-- Search Trigger (Future) -->
+    <li class="nav-item">
+         <form asp-controller="Home" asp-action="Index" method="get" class="d-flex">
+             <div class="input-group">
+                 <input type="text" name="searchString" class="form-control bg-dark text-white border-secondary" placeholder="Pizza, KFC..." value="@ViewData["CurrentFilter"]" style="min-width: 200px;">
+                 <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+             </div>
+         </form>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link position-relative" asp-controller="Cart" asp-action="Index">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-yellow text-black" style="font-size: 0.6rem;">
+                !
+            </span>
+        </a>
+    </li>
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var currentUser = await UserManager.GetUserAsync(User);
+        <li class="nav-item d-flex align-items-center me-2">
+            <span class="badge bg-dark-glass border border-warning text-yellow rounded-pill px-3 py-2 shadow-sm" title="Loyalty Points">
+                <i class="fas fa-coins me-1"></i> @(currentUser?.LoyaltyPoints ?? 0)
+            </span>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle btn btn-outline-light px-3 rounded-pill text-white border-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-circle"></i> @UserManager.GetUserName(User)
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow-lg" aria-labelledby="navbarDropdown">
+                @if (User.IsInRole("Admin"))
+                {
+                    <li><a class="dropdown-item text-yellow fw-bold" asp-controller="Admin" asp-action="Index"><i class="fas fa-hammer me-2"></i>Admin Panel</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                }
+                @if (User.IsInRole("Courier"))
+                {
+                    <li><a class="dropdown-item text-success fw-bold" asp-controller="Courier" asp-action="Index"><i class="fas fa-motorcycle me-2"></i>Courier Panel</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                }
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                <li><a class="dropdown-item" asp-controller="Orders" asp-action="MyOrders"><i class="fas fa-box me-2"></i>My Orders</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="form-inline">
+                        <button  type="submit" class="dropdown-item text-danger"><i class="fas fa-sign-out-alt me-2"></i>Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+             <a class="nav-link btn btn-primary text-black px-4 rounded-pill" asp-controller="Account" asp-action="Login">Login</a>
+        </li>
+        <li class="nav-item">
+             <a class="nav-link btn btn-success text-white px-4 rounded-pill" asp-controller="Account" asp-action="Register">Sign Up</a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,125 @@
+@model Nouhaila.netProjet.ViewModels.RestaurantDetailsViewModel
+
+@{
+    ViewData["Title"] = Model.Restaurant.Name;
+}
+
+<!-- Restaurant Header -->
+<div class="position-relative mb-4" style="height: 300px; border-radius: 0 0 20px 20px; overflow: hidden; margin-top: -20px;">
+    <div style="background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('@Model.Restaurant.ImageUrl') center/cover no-repeat; height: 100%; display: flex; align-items: flex-end; padding: 30px;">
+        <div class="container text-white">
+            <h1 class="display-4 fw-bold">@Model.Restaurant.Name</h1>
+            <p class="lead mb-2 text-white-50">@Model.Restaurant.Description</p>
+            <div class="d-flex gap-3 text-warning">
+                <span><i class="fas fa-star"></i> @Model.Restaurant.Rating</span>
+                <span class="text-white">|</span>
+                <span class="text-white"><i class="fas fa-clock"></i> @Model.Restaurant.DeliveryTimeRange</span>
+                <span class="text-white">|</span>
+                <span class="text-white"><i class="fas fa-bicycle"></i> $@Model.Restaurant.DeliveryFee Delivery</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="row">
+        <!-- Sidebar Menu Categories (Desktop) -->
+        <div class="col-md-3 d-none d-md-block">
+            <div class="sticky-top" style="top: 100px;">
+                <h5 class="fw-bold mb-3 text-uppercase text-secondary small">Menu</h5>
+                <div class="list-group list-group-flush bg-transparent">
+                    @foreach (var cat in Model.Categories)
+                    {
+                        <a href="#section-@cat" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 ps-0">
+                            @cat
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="col-md-9">
+            @foreach (var cat in Model.Categories)
+            {
+                <div id="section-@cat" class="mb-5">
+                    <h4 class="fw-bold mb-4 border-bottom border-dark pb-2 text-white">@cat</h4>
+                    <div class="row g-4">
+                        @foreach (var product in Model.MenuProducts.Where(p => p.Type.ToString() == cat))
+                        {
+                            <div class="col-lg-6">
+                                <div class="card card-dark h-100 border-0 p-3 shadow-sm hover-lift">
+                                    <div class="d-flex align-items-center gap-3">
+                                        @if (!string.IsNullOrEmpty(product.ImageUrl))
+                                        {
+                                            <img src="@product.ImageUrl" class="rounded-4" style="width: 110px; height: 110px; object-fit: cover;" alt="@product.Name">
+                                        }
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <h5 class="fw-bold mb-1" style="font-size: 1.1rem;">@product.Name</h5>
+                                                <span class="text-yellow fw-bold">$@product.Price</span>
+                                            </div>
+                                            <p class="text-secondary small mb-3">@product.Description</p>
+                                            <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                                                <input type="hidden" name="productId" value="@product.Id" />
+                                                <button type="submit" class="btn btn-primary btn-sm rounded-pill w-100">
+                                                    <i class="fas fa-cart-plus me-1"></i> Add to Cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Reviews Section -->
+            <div class="mt-5 pt-4 border-top border-dark">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold text-white">What people say</h3>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="h3 fw-bold text-yellow mb-0">@Model.Restaurant.Rating</span>
+                        <div class="text-warning small">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Sample Review 1 -->
+                    <div class="col-md-6">
+                        <div class="card card-dark p-4 border-0 shadow-sm">
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="rounded-circle bg-yellow text-black d-flex align-items-center justify-content-center fw-bold" style="width: 50px; height: 50px;">JD</div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">John Doe</h6>
+                                    <div class="text-warning small"><i class="fas fa-star"></i> 5.0</div>
+                                </div>
+                            </div>
+                            <p class="text-secondary small italic">"L'incroyable Big Mac était parfait, livraison rapide et soignée !"</p>
+                        </div>
+                    </div>
+                    <!-- Sample Review 2 -->
+                    <div class="col-md-6">
+                        <div class="card card-dark p-4 border-0 shadow-sm">
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="rounded-circle bg-green text-white d-flex align-items-center justify-content-center fw-bold" style="width: 50px; height: 50px;">MS</div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Marie S.</h6>
+                                    <div class="text-warning small"><i class="fas fa-star"></i> 4.5</div>
+                                </div>
+                            </div>
+                            <p class="text-secondary small italic">"Frites bien chaudes, j'adore le système de suivi sur la carte."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

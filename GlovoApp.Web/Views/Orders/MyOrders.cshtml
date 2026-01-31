@@ -1,0 +1,98 @@
+@using Nouhaila.netProjet.Models
+@model IEnumerable<Nouhaila.netProjet.Models.Order>
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+@section Scripts {
+    <script>
+        function setRating(orderId, rating) {
+            document.getElementById('ratingInput-' + orderId).value = rating;
+            
+            // Highlight stars
+            const stars = document.querySelectorAll('#rateModal-' + orderId + ' .rating-stars i');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.replace('far', 'fas');
+                } else {
+                    star.classList.replace('fas', 'far');
+                }
+            });
+        }
+    </script>
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold text-white mb-5"><i class="fas fa-history text-yellow me-2"></i> My Order History</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="card card-dark p-5 text-center">
+            <i class="fas fa-receipt fa-4x text-secondary mb-3"></i>
+            <h3>No orders yet</h3>
+            <p class="text-secondary">Your order history will appear here once you make your first purchase.</p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary rounded-pill px-4 mt-3">Start Ordering</a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var order in Model)
+            {
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card card-dark p-3 border-0 shadow-sm h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-0">Order #@order.Id</h5>
+                                <p class="text-secondary small mb-0">@order.CreatedAt.ToShortDateString()</p>
+                            </div>
+                            <span class="badge @(order.Status == OrderStatus.Delivered ? "bg-success" : "bg-warning")">
+                                @order.Status
+                            </span>
+                        </div>
+                        <h4 class="text-yellow fw-bold mb-3">$@order.TotalPrice</h4>
+                        <a asp-action="Tracking" asp-route-id="@order.Id" class="btn btn-outline-light rounded-pill w-100 mb-2">
+                            View Details
+                        </a>
+                        @if (order.Status == OrderStatus.Delivered)
+                        {
+                            <button class="btn btn-yellow rounded-pill w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#rateModal-@order.Id">
+                                <i class="fas fa-star me-1"></i> Rate Order
+                            </button>
+
+                            <!-- Rating Modal -->
+                            <div class="modal fade" id="rateModal-@order.Id" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-dark border-secondary">
+                                        <div class="modal-header border-secondary">
+                                            <h5 class="modal-title">Rate your Order #@order.Id</h5>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <form asp-controller="Reviews" asp-action="Submit" method="post">
+                                            <div class="modal-body text-center">
+                                                <input type="hidden" name="orderId" value="@order.Id" />
+                                                <p class="text-secondary small">How was your experience?</p>
+                                                <div class="rating-stars mb-3 h3 text-yellow">
+                                                    @for(int i=1; i<=5; i++)
+                                                    {
+                                                        <i class="far fa-star cursor-pointer" onclick="setRating(@order.Id, @i)"></i>
+                                                    }
+                                                    <input type="hidden" name="rating" id="ratingInput-@order.Id" value="5" />
+                                                </div>
+                                                <textarea name="comment" class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Write a comment..."></textarea>
+                                            </div>
+                                            <div class="modal-footer border-secondary">
+                                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary rounded-pill">Submit Review</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

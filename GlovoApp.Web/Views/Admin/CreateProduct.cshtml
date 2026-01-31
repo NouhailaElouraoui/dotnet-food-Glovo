@@ -1,0 +1,66 @@
+@model Nouhaila.netProjet.Models.Product
+@using Nouhaila.netProjet.Models
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-dark p-4 shadow-lg border-0">
+                <h2 class="fw-bold text-white mb-4">Add New Product</h2>
+                
+                <form asp-action="CreateProduct" method="post">
+                    <input type="hidden" name="RestaurantId" value="@ViewBag.RestaurantId" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label text-secondary small fw-bold uppercase">Product Name</label>
+                        <input asp-for="Name" class="form-control bg-dark text-white border-secondary" placeholder="e.g. Big Mac" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label text-secondary small fw-bold uppercase">Description</label>
+                        <textarea asp-for="Description" class="form-control bg-dark text-white border-secondary" rows="2"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Price" class="form-label text-secondary small fw-bold uppercase">Price ($)</label>
+                            <input asp-for="Price" class="form-control bg-dark text-white border-secondary" step="0.01" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Type" class="form-label text-secondary small fw-bold uppercase">Type</label>
+                            <select asp-for="Type" class="form-select bg-dark text-white border-secondary" asp-items="Html.GetEnumSelectList<ProductType>()">
+                            </select>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ImageUrl" class="form-label text-secondary small fw-bold uppercase">Image URL</label>
+                        <input asp-for="ImageUrl" class="form-control bg-dark text-white border-secondary" placeholder="https://..." />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input asp-for="IsPopular" class="form-check-input bg-dark border-secondary" />
+                        <label asp-for="IsPopular" class="form-check-label text-white">Popular Item (Fire badge)</label>
+                    </div>
+
+                    <div class="d-flex gap-2 pt-3">
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold text-black">Add to Menu</button>
+                        <a asp-action="ManageMenu" asp-route-restaurantId="@ViewBag.RestaurantId" class="btn btn-outline-light rounded-pill px-4">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

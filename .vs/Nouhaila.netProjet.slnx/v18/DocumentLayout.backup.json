@@ -1,0 +1,213 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\controllers\\couriercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\controllers\\couriercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\hubs\\orderhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\hubs\\orderhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|c:\\users\\hp\\desktop\\glovo_nouhailaelouraoui\\glovoapp.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F5EF3D31-F03F-FBE0-6F0A-B023A5A07B07}|GlovoApp.Web\\Nouhaila.netProjet.csproj|solutionrelative:glovoapp.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\CartController.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T10:18:09.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T10:05:10.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Program.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Program.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:54:32.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Data\\DbSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T23:29:04.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T23:28:12.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CourierController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\CourierController.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Controllers\\CourierController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Controllers\\CourierController.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Controllers\\CourierController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T17:18:42.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderHub.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Hubs\\OrderHub.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Hubs\\OrderHub.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Hubs\\OrderHub.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Hubs\\OrderHub.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:55:58.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Models\\Order.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Models\\Order.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:56:55.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Models\\Product.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Models\\Product.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:57:29.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "GlovoApp.Web\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAywCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T23:29:02.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "GlovoApp.Web\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-11T23:27:58.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "GlovoApp.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Glovo_NouhailaElouraoui\\GlovoApp.Web\\appsettings.json",
+              "RelativeToolTip": "GlovoApp.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-11T17:19:46.471Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

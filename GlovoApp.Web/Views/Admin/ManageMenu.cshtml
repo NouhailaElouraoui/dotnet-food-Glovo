@@ -1,0 +1,60 @@
+@model Nouhaila.netProjet.Models.Restaurant
+@{
+    ViewData["Title"] = $"Menu Management - {Model.Name}";
+}
+
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-white">Menu: @Model.Name</h2>
+            <p class="text-secondary">@Model.Products.Count items in menu</p>
+        </div>
+        <a asp-action="CreateProduct" asp-route-restaurantId="@Model.Id" class="btn btn-primary rounded-pill"><i class="fas fa-plus me-2"></i>Add Product</a>
+    </div>
+
+    <div class="card card-dark border-0 shadow-lg p-4">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Popular</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Products)
+                    {
+                        <tr>
+                            <td><img src="@item.ImageUrl" class="rounded" style="width: 40px; height: 40px; object-fit: cover;"></td>
+                            <td><span class="fw-bold">@item.Name</span></td>
+                            <td><span class="badge bg-secondary">@item.Type</span></td>
+                            <td><span class="text-yellow">$@item.Price</span></td>
+                            <td>
+                                @if (item.IsPopular)
+                                {
+                                    <span class="badge bg-info"><i class="fas fa-fire"></i> Popular</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a asp-action="EditProduct" asp-route-id="@item.Id" class="btn btn-outline-light"><i class="fas fa-edit"></i></a>
+                                    <form asp-action="DeleteProduct" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Delete this product?');" style="display:inline;">
+                                        <button type="submit" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <a asp-action="Restaurants" class="btn btn-outline-light rounded-pill"><i class="fas fa-arrow-left me-2"></i>Back to Restaurants</a>
+    </div>
+</div>

@@ -1,0 +1,126 @@
+@using Nouhaila.netProjet.Models
+@model Nouhaila.netProjet.Models.Order
+@{
+    ViewData["Title"] = "Track Your Order";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="card card-dark p-4 border-0 shadow-lg mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold mb-0">Order #@Model.Id</h2>
+                    <span class="badge bg-yellow text-black px-3 py-2 rounded-pill fw-bold">@Model.Status</span>
+                </div>
+
+                <!-- Live Map Container -->
+                <div class="rounded-3 overflow-hidden border border-secondary mb-4" style="height: 350px;">
+                    <div id="deliveryMap" style="height: 100%; width: 100%;"></div>
+                </div>
+
+                <div class="order-stepper position-relative mb-5" style="height: 4px; background: #333; margin: 40px 0;">
+                    <div class="progress-bar bg-yellow" style="height: 100%; width: @( (int)Model.Status * 25 )%;"></div>
+                    <div class="d-flex justify-content-between position-absolute w-100" style="top: -15px;">
+                        @foreach (var status in Enum.GetValues(typeof(OrderStatus)))
+                        {
+                            <div class="text-center">
+                                <div class="rounded-circle @( (int)Model.Status >= (int)status ? "bg-yellow" : "bg-dark border border-secondary" )" style="width: 30px; height: 30px; margin: 0 auto 10px;"></div>
+                                <span class="small text-secondary @( (int)Model.Status == (int)status ? "text-white fw-bold" : "" )">@status</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <h4 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-yellow me-2"></i> Delivery to</h4>
+                <p class="text-secondary">@Model.DeliveryAddress</p>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card card-dark p-4 border-0 shadow-lg">
+                <h4 class="fw-bold mb-4">Order Summary</h4>
+                @foreach (var item in Model.OrderItems)
+                {
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <span class="fw-bold text-white">@item.Quantity x @item.Product?.Name</span>
+                            <p class="text-secondary small mb-0">$@item.UnitPrice each</p>
+                        </div>
+                        <span class="text-white">$@(item.Quantity * item.UnitPrice)</span>
+                    </div>
+                }
+                <hr class="border-secondary" />
+                <div class="d-flex justify-content-between mt-3">
+                    <h5 class="fw-bold">Total</h5>
+                    <h5 class="fw-bold text-yellow">$@Model.TotalPrice</h5>
+                </div>
+                <div class="mt-4 pt-3 border-top border-secondary">
+                    <p class="text-secondary small"><i class="fas fa-shield-alt me-2"></i> Payment via Simulated Stripe</p>
+                </div>
+            </div>
+            
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-light rounded-pill w-100 py-3 mt-4">
+                <i class="fas fa-chevron-left me-2"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        .leaflet-container { background: #121212 !important; }
+        .leaflet-tile { filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%); }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // SignalR Connection
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/orderHub")
+                .build();
+
+            connection.start().then(function () {
+                console.log("SignalR Connected!");
+                connection.invoke("JoinOrderGroup", @Model.Id);
+            }).catch(err => console.error(err.toString()));
+
+            connection.on("OrderStatusUpdated", function (orderId, newStatus) {
+                if (orderId == @Model.Id) {
+                    // Update UI dynamically
+                    location.reload(); // Simple way for now, or update elements
+                }
+            });
+
+            // Map Logic (Existing)
+            var map = L.map('deliveryMap').setView([48.8566, 2.3522], 13);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19
+            }).addTo(map);
+
+            var restaurantPos = [48.8584, 2.3500];
+            var deliveryPos = [48.8600, 2.3600];
+            
+            var restIcon = L.icon({
+                iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+                iconSize: [32, 32]
+            });
+
+            var userIcon = L.icon({
+                iconUrl: 'https://cdn-icons-png.flaticon.com/512/854/854866.png',
+                iconSize: [32, 32]
+            });
+
+            L.marker(restaurantPos, {icon: restIcon}).addTo(map).bindPopup("<b>Restaurant</b>");
+            L.marker(deliveryPos, {icon: userIcon}).addTo(map).bindPopup("<b>You</b>");
+            
+            var line = L.polyline([restaurantPos, deliveryPos], {color: '#ffc107', dashArray: '5, 10'}).addTo(map);
+            map.fitBounds(line.getBounds(), {padding: [50, 50]});
+        });
+    </script>
+}

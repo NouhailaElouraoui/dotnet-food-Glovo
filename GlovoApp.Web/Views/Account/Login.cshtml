@@ -1,0 +1,46 @@
+@model Nouhaila.netProjet.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-md-5">
+        <div class="card card-dark p-4 shadow-lg">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-white">Welcome Back</h2>
+                <p class="text-secondary">Please login to your account</p>
+            </div>
+            <form asp-action="Login" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <div class="form-floating mb-3">
+                    <input asp-for="Email" class="form-control bg-dark text-white border-secondary" placeholder="name@example.com" />
+                    <label asp-for="Email" class="text-secondary">Email address</label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input asp-for="Password" class="form-control bg-dark text-white border-secondary" placeholder="Password" />
+                    <label asp-for="Password" class="text-secondary">Password</label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input bg-dark border-secondary" asp-for="RememberMe" />
+                    <label class="form-check-label text-secondary" asp-for="RememberMe">
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill fw-bold">Log in</button>
+                    <a asp-action="Register" class="btn btn-outline-light btn-lg rounded-pill">Create new account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
